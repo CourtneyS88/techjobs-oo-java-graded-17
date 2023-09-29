@@ -17,14 +17,15 @@ public class Location {
     //  constructor should also call the empty constructor in order to initialize the 'id' field.
     public Location(String value) {
         this();
-        this.value = field;
-
+        this.value = value;
+    }
     // Custom toString, equals, and hashCode methods:
 
     @Override
-    public String toString() {
-        return value;
-    }
+    public String toString() { return value;}
+
+
+
 
     @Override
     public boolean equals(Object o) {
