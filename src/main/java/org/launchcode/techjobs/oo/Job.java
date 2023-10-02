@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
     private int id;
@@ -12,8 +14,6 @@ public class Job {
     private Location location;
     private PositionType positionType;
     private CoreCompetency coreCompetency;
-
-
 
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
@@ -96,4 +96,35 @@ public class Job {
     public int hashCode() {
         return Objects.hash(id, name, employer, location, positionType, coreCompetency);
     }
+
+    ;
+
+    @Override
+    public String toString() {
+
+        Job fullJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        String jobName = ((name != null && !name.isEmpty()) ? name : "Data not available");
+        String jobEmployer = ((employer.getValue() != null && !employer.getValue().isEmpty()) ? employer.getValue() : "Data not available");
+        String jobLocation = ((location.getValue() != null && !location.getValue().isEmpty()) ? location.getValue() : "Data not available");
+        String jobPositionType = ((positionType.getValue() != null && !positionType.getValue().isEmpty()) ? positionType.getValue() : "Data not available");
+        String jobCoreCompetency = ((coreCompetency.getValue() != null && !coreCompetency.getValue().isEmpty()) ? coreCompetency.getValue() : "Data not available");
+
+        return
+                System.lineSeparator() +
+                "ID: " + id + System.lineSeparator()  +
+                "Name: " + jobName + System.lineSeparator()+
+                "Employer: " + jobEmployer + System.lineSeparator() +
+                "Location: " + jobLocation + System.lineSeparator() +
+                "Position Type: " + jobPositionType + System.lineSeparator() +
+                "Core Competency: " + jobCoreCompetency +
+                System.lineSeparator();
+
+
+
+    }
+
 }
+
+
+
